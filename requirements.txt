@@ -1,0 +1,9 @@
+Flask
+gunicorn
+selenium
+flask-httpauth
+memory_profiler
+psutil
+line_profiler
+retry
+requests
