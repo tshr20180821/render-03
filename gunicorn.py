@@ -12,9 +12,6 @@ loglevel = 'info'
 logfile = './log/app.log'
 logconfig = None
 
-# Proc Name
-proc_name = 'Infrastructure-Practice-Flask'
-
 # Worker Processes
 workers = 2
 worker_class = 'sync'
