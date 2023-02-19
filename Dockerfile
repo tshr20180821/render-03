@@ -1,12 +1,11 @@
 FROM python:3
 
-ENV \
-  PYTHONUNBUFFERED=1 \
-  PIP_DISABLE_PIP_VERSION_CHECK=on
+ENV PYTHONUNBUFFERED=1
+ENV PIP_DISABLE_PIP_VERSION_CHECK=on
 
 RUN \
-  apt-get update \
-  pip install --upgrade pip
+     apt-get update \
+  && pip install --upgrade pip
 
 RUN mkdir -p /var/www
 COPY ./requirements.txt /var/www
