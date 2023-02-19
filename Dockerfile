@@ -17,4 +17,5 @@ RUN python --version
 #COPY . .
 ADD . /usr/src/app/
 
-CMD [ "python", "./test.py" ]
+CMD ["python", "./test.py"]
+CMD ["gunicorn", "test01:app", "-b", "0.0.0.0:5000"]
