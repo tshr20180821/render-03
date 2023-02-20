@@ -9,10 +9,10 @@ RUN apt-get update \
  && curl -o /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
  && dpkg -i /tmp/google-chrome-stable_current_amd64.deb; exit 0
  
-RUN rm -f /tmp/google-chrome-stable_current_amd64.deb \
- && apt-get intall -y -f \
- && pip install --upgrade pip \
- && mkdir -p /var/www
+RUN rm -f /tmp/google-chrome-stable_current_amd64.deb
+RUN apt-get intall -y -f
+RUN pip install --upgrade pip
+RUN mkdir -p /var/www
 
 COPY ./requirements.txt /var/www
 RUN pip install --no-cache-dir -r /var/www/requirements.txt
