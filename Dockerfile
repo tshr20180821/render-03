@@ -15,7 +15,7 @@ RUN rm -f /tmp/google-chrome-stable_current_amd64.deb \
  && mkdir -p /var/www
 
 COPY ./requirements.txt /var/www
-RUN pip install --no-cache-dir -r /var/www/requirements.txt
+RUN pip install --no-cache-dir -r /var/www/requirements.txt \
  && python --version \
  && cat /proc/version \
  && cat /etc/os-release
