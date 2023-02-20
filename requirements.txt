@@ -1,6 +1,7 @@
 Flask
 gunicorn
 selenium
+webdriver-manager
 flask-httpauth
 memory_profiler
 psutil
