@@ -93,7 +93,7 @@ def get_contents():
     # options.add_argument('--proxy-server="direct://"')
     # options.add_argument('--proxy-bypass-list=*')
     options.add_argument('--proxy-server="http://dummy.local/"')
-    options.add_argument('--proxy-bypass-list=' + os.getenv('PROXY_BYPASS_LIST')
+    options.add_argument('--proxy-bypass-list=' + os.getenv('PROXY_BYPASS_LIST'))
     options.add_argument('--start-maximized')
     # options.add_argument('--host-rules=' + os.getenv('HOST_RULES'))
     options.add_argument('--user-agent=' + os.getenv('USER_AGENT'))
