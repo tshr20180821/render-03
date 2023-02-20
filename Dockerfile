@@ -18,6 +18,9 @@ RUN cat /etc/os-release
 
 COPY ./*.py /var/www
 
+RUN curl -o /tmp/google-chrome-stable_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN ls -lang /tmp
+
 WORKDIR /var/www
 
 CMD ["gunicorn", "main:app", "--config", "/var/www/gunicorn.py" ]
