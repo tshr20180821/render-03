@@ -120,7 +120,7 @@ def get_contents():
         logger.info(pid + ' CLASS_NAME : ' + os.getenv('CLASS_NAME'))
         logger.info(pid + ' CHECK POINT 060')
         element = WebDriverWait(driver, 15).until(
-            expected_conditions.visibility_of_element_located(By.CLASS_NAME, os.getenv('CLASS_NAME'))
+            expected_conditions.visibility_of_element_located((By.CLASS_NAME, os.getenv('CLASS_NAME')))
         )
     except TimeoutException as e:
         logger.info(pid + ' TimeoutException : ' + str(e))
