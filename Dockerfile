@@ -13,6 +13,8 @@ COPY ./requirements.txt /var/www
 RUN pip install --no-cache-dir -r /var/www/requirements.txt
 
 RUN python --version
+RUN cat /proc/version
+RUN cat /etc/os-release
 
 COPY ./*.py /var/www
 
