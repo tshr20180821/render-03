@@ -4,6 +4,7 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=on
 
 RUN apt-get update \
+ && apt-get -y upgrade
  && pip install --upgrade pip
 
 RUN mkdir -p /var/www
@@ -12,9 +13,8 @@ RUN pip install --no-cache-dir -r /var/www/requirements.txt
 
 RUN python --version
 
-COPY ./flask_app.py /var/www
-COPY ./gunicorn.py /var/www
+COPY ./*.py /var/www
 
 WORKDIR /var/www
 
-CMD ["gunicorn", "flask_app:app", "--config", "/var/www/gunicorn.py" ]
+CMD ["gunicorn", "main:app", "--config", "/var/www/gunicorn.py" ]
