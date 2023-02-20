@@ -11,7 +11,7 @@ RUN apt-get update \
  
 RUN rm -f /tmp/google-chrome-stable_current_amd64.deb \
  && apt-get intall -y -f \
- && pip install --upgrade pip
+ && pip install --upgrade pip \
  && mkdir -p /var/www
 
 COPY ./requirements.txt /var/www
