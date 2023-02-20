@@ -10,16 +10,15 @@ RUN apt-get update \
  && dpkg -i /tmp/google-chrome-stable_current_amd64.deb; exit 0
  
 RUN rm -f /tmp/google-chrome-stable_current_amd64.deb \
- && apt-get install -y -f
-RUN pip install --upgrade pip
-RUN mkdir -p /var/www
+ && apt-get install -y -f \
+ && pip install --upgrade pip \
+ && mkdir -p /var/www
 
 COPY ./requirements.txt /var/www
 RUN pip install --no-cache-dir -r /var/www/requirements.txt
-
-RUN python --version
-RUN cat /proc/version
-RUN cat /etc/os-release
+ && python --version \
+ && cat /proc/version \
+ && cat /etc/os-release
 
 COPY ./*.py /var/www
 
