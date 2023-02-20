@@ -10,7 +10,7 @@ RUN apt-get update \
  && dpkg -i /tmp/google-chrome-stable_current_amd64.deb; exit 0
  
 RUN rm -f /tmp/google-chrome-stable_current_amd64.deb
-RUN apt-get intall -y -f xdg-utils
+RUN apt-get install -y -f
 RUN pip install --upgrade pip
 RUN mkdir -p /var/www
 
