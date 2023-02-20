@@ -93,14 +93,14 @@ def get_contents():
     # options.add_argument('--proxy-server="direct://"')
     # options.add_argument('--proxy-bypass-list=*')
     options.add_argument('--proxy-server="http://dummy.local/"')
-    options.add_argument('--proxy-bypass-list=' + os.environ['PROXY_BYPASS_LIST'])
+    options.add_argument('--proxy-bypass-list=' + os.getenv('PROXY_BYPASS_LIST')
     options.add_argument('--start-maximized')
-    # options.add_argument('--host-rules=' + os.environ['HOST_RULES'])
-    options.add_argument('--user-agent=' + os.environ['USER_AGENT'])
+    # options.add_argument('--host-rules=' + os.getenv('HOST_RULES'))
+    options.add_argument('--user-agent=' + os.getenv('USER_AGENT'))
     
     options.page_load_strategy = 'eager'
     
-    logger.info(pid + ' HOST_RULES : ' + os.environ['HOST_RULES'])
+    logger.info(pid + ' HOST_RULES : ' + os.getenv('HOST_RULES'))
     logger.info(pid + ' CHECK POINT 020')
 
     driver = get_webdriver(options, caps)
@@ -117,10 +117,10 @@ def get_contents():
     driver.get(url)
     try:
         logger.info(pid + ' CHECK POINT 050')
-        logger.info(pid + ' CLASS_NAME : ' + os.environ['CLASS_NAME'])
+        logger.info(pid + ' CLASS_NAME : ' + os.getenv('CLASS_NAME'))
         logger.info(pid + ' CHECK POINT 060')
         element = WebDriverWait(driver, 15).until(
-            expected_conditions.visibility_of_element_located((By.CLASS_NAME, os.environ['CLASS_NAME']))
+            expected_conditions.visibility_of_element_located((By.CLASS_NAME, os.getenv('CLASS_NAME')))
         )
     except TimeoutException as e:
         logger.info(pid + ' TimeoutException : ' + str(e))
