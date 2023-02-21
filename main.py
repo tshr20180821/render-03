@@ -100,7 +100,7 @@ def get_contents():
     
     options.page_load_strategy = 'eager'
     
-    logger.info(pid + ' HOST_RULES : ' + os.getenv('HOST_RULES'))
+    # logger.info(pid + ' HOST_RULES : ' + os.getenv('HOST_RULES'))
     logger.info(pid + ' CHECK POINT 020')
 
     driver = get_webdriver(options, caps)
